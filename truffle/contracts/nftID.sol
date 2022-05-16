@@ -47,7 +47,7 @@ contract NftID is ERC721URIStorage, Ownable {
         address _signer = ecrecover(hashMessage, v, r, s);
         require(signer == _signer, "NftID: Invalid signature");
         // NFTs are minted from frontend only
-
+        nonce++;
         id.increment();
         uint256 currId = id.current();
         idOfOwner[_msgSender()] = currId; // update to latest one

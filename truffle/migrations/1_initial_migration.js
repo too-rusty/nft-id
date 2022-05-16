@@ -1,5 +1,5 @@
-const Migrations = artifacts.require("Migrations");
+const NftID = artifacts.require('NftID')
 
 module.exports = function (deployer) {
-  deployer.deploy(Migrations);
+  deployer.deploy(NftID);
 };
