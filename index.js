@@ -256,31 +256,31 @@ const FetchPinataDataByAddress = async (addr) => {
 const asyncMain2 = async () => {
     const addr = '0xabcd'
     try {
-        const public = {
-            name : 'abcd',
-            twitter : 'twitter',
-            instagram : 'instagram'
-        }
-        const private = {
-            secretName : 'secretname',
-            secretTwitter : 'secretTwitter'
-        }
-        // SAVE data and return ipfs hash
-        const res0 = await SaveJSON(addr, public, private)
-        console.log(`res0 ${res0}`) // ipfs hash
+        // const public = {
+        //     name : 'mehdi',
+        //     twitter : 'twitter',
+        //     instagram : 'instagram'
+        // }
+        // const private = {
+        //     secretName : 'secret mehdi',
+        //     secretTwitter : 'secretTwitter'
+        // }
+        // // SAVE data and return ipfs hash
+        // const res0 = await SaveJSON(addr, public, private)
+        // console.log(`res0 ${res0}`) // ipfs hash
 
         // FETCH data
         const res1 = await FetchPinataDataByAddress('0xabcd')
         console.log(`res1 ${JSON.stringify(res1)}`)
 
-        // UPDATE private Data
-        const private2 = {
-            secretName : 'secretname2',
-            secretTwitter : 'secretTwitter'
-        }
-        await UpdatePrivateDataByAddress(addr, private2)
-        const res2 = await FetchPinataDataByAddress('0xabcd')
-        console.log(`res2 ${JSON.stringify(res2)}`)
+        // // UPDATE private Data
+        // const private2 = {
+        //     secretName : 'secretname2',
+        //     secretTwitter : 'secretTwitter'
+        // }
+        // await UpdatePrivateDataByAddress(addr, private2)
+        // const res2 = await FetchPinataDataByAddress('0xabcd')
+        // console.log(`res2 ${JSON.stringify(res2)}`)
 
     } catch (err) {
         console.log(`err while saving: ${err}`)

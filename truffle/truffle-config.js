@@ -5,13 +5,15 @@ require('dotenv').config()
 const mnemonic = process.env.PRIVATE_KEY
 const mnemonic_test = process.env.PRIVATE_KEY
 const bscApiKey = process.env.BSC_API_KEY
+const polygonApiKey = process.env.POLYGON_API_KEY
 
 module.exports = {
 
   plugins: ["truffle-plugin-verify"],
 
   api_keys: {
-    bscscan: bscApiKey
+    bscscan: bscApiKey,
+    polygonscan: polygonApiKey
   },
 
   networks: {
@@ -70,14 +72,14 @@ module.exports = {
       skipDryRun: true
     },
     bsc_mainnet: {
-      provider: () => new HDWalletProvider(mnemonic_main,'https://bsc-dataseed.binance.org/'),
+      provider: () => new HDWalletProvider(mnemonic,'https://bsc-dataseed.binance.org/'),
       network_id: 56,
       // confirmations: 5,
       timeoutBlocks: 200,
       skipDryRun: true
     },
     matic_mainnet: {
-      provider: () => new HDWalletProvider(mnemonic_main, `https://polygon-rpc.com`),
+      provider: () => new HDWalletProvider(mnemonic, `https://polygon-rpc.com`),
       network_id: 137,
       confirmations: 2,
       timeoutBlocks: 10000, // was 500 before
